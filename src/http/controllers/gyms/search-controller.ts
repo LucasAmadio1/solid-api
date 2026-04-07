@@ -1,4 +1,4 @@
-import { makeSearchGymsUseCase } from '@/use-cases/factories/make-search-gyms-use-case'
+import { makeSearchGymsUseCase } from '@/use-cases/_factories/make-search-gyms-use-case'
 import { FastifyRequest, FastifyReply } from 'fastify'
 import z from 'zod'
 
@@ -11,7 +11,7 @@ export async function searchGymController(
     page: z.coerce.number().min(1).default(1),
   })
 
-  const { search, page } = searchGymQuerySchema.parse(request.body)
+  const { search, page } = searchGymQuerySchema.parse(request.query)
 
   const searchGymUseCase = makeSearchGymsUseCase()
 

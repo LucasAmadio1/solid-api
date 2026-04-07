@@ -1,8 +1,8 @@
 import { InMemoryCheckInsRepository } from '@/repositories/in-memory/in-memory-check-ins-repository'
 import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest'
 import { ValidateCheckInUseCase } from './validate-check-in-use-case'
-import { ResourceNotFoundError } from './errors/resource-not-found-error'
-import { LateCheckInValidationError } from './errors/late-check-in-validation-error'
+import { LateCheckInValidationError } from '../_errors/late-check-in-validation-error'
+import { ResourceNotFoundError } from '../_errors/resource-not-found-error'
 
 let checkInsRepository: InMemoryCheckInsRepository
 let validateCheckInUseCase: ValidateCheckInUseCase
