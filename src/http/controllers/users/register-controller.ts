@@ -7,6 +7,8 @@ export async function registerController(
   request: FastifyRequest,
   reply: FastifyReply,
 ) {
+  await request.jwtVerify({ onlyCookie: true })
+
   const registerBodySchema = z.object({
     name: z.string(),
     email: z.string(),
